@@ -1,0 +1,25 @@
+Exercise 1: Software application
+
+The company NoThrust Inc. business is centred in elaborating environmental technical reports using diverse measurement devices (for example, buoys driven by ocean currents). The procedure they apply is as follows:
+
+1. A client demands a certain type of study (there are several options) for a given area.
+
+2. A budget is elaborated based on the number of required data capture missions (can be just one or many), the devices (variable number and configuration) and the estimated time schedule.
+
+3. Upon client approval, the study process is started.
+
+4. Once all missions have been completed, the collected data is processed and the final report is prepared.
+
+5. The client receives the report document and the bill.
+
+A mission consist in the deployment of the required devices in the target area, the trajectory tracking and partially sampled data inspection, recovery and full data download.
+
+So far, the company performed the data capture under full human intervention, for example, a marine sector inspection required registering drifter tracking manually. Recently, a new generation of intelligent devices have been acquired (autonomous gliders, surface boats, ground robots, drones, etc.). Those vehicles incorporate multiple sensors (cameras, GPS, temperature, accelerometer, lidar, etc.) and can communicate real time position and status remotely to a base station. Still, adequate battery and specific sampling configuration needs to be set accordingly to meet mission requirements. Also, sensors need to be re-calibrated periodically and battery status checked.
+
+EXERCISE [max. 4 pages, in Spanish or English]:
+
+Considering that NoThrust is looking for an integrated software solution covering all company activity:
+
+- Select one aspect related with the different SI stages reviewed in the lectures: analysis, modeling or design.
+
+- Develop partially, and only in the context of the previously selected stage, the application-specific considerations (for example, you could discuss about requirements, or software patterns, or methodologies, or software architecture, etc).

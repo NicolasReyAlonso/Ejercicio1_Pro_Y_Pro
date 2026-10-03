@@ -1,0 +1,14 @@
+@startuml
+left to right direction
+actor Client
+actor Administrator
+actor 
+
+rectangle Sistema {
+  Client --> (Request proyect)
+  Client --> (Consultar informes)
+  Administrator --> (Gestionar usuarios)
+  Administrator --> (Log in)
+}
+Administrador --> (Start Business Process)
+@enduml

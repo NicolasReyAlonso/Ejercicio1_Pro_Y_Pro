@@ -1,0 +1,20 @@
+# --- LaTeX build artifacts ---
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.bcf
+*.blg
+*.run.xml
+*.nav
+*.snm
+*.vrb
+*.lastpage
+
+# Descomenta la siguiente línea si prefieres NO versionar el PDF compilado
+# (y regenerarlo siempre con pdflatex antes de entregar):
+main.pdf

@@ -1,0 +1,129 @@
+% =====================================================================
+%  Ejercicio 1 — Programación y Prototipado (SIANI)
+%  Plantilla profesional y compacta (límite: 4 páginas)
+% =====================================================================
+\documentclass[11pt,a4paper]{article}
+
+% --------------------------- Idioma / codificación ---------------------------
+\usepackage[spanish,es-tabla]{babel}  % Cambia a [english] si escribes en inglés
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% --------------------------- Página y márgenes ---------------------------
+\usepackage[a4paper,margin=2.3cm,top=2.1cm,bottom=2.3cm]{geometry}
+\usepackage{setspace}
+\setstretch{1.04}
+
+% --------------------------- Color corporativo ---------------------------
+\usepackage{xcolor}
+\definecolor{accent}{HTML}{0B5394}   % azul profesional (cámbialo si quieres otro)
+\definecolor{accentlight}{HTML}{E8F0FA}
+\definecolor{greytext}{HTML}{555555}
+
+% --------------------------- Tipografía de secciones ---------------------------
+\usepackage{titlesec}
+\titleformat{\section}
+  {\large\bfseries\color{accent}}
+  {\thesection.}{0.5em}{}
+\titlespacing{\section}{0pt}{1.3em plus 1em minus 0.4em}{0.6em}
+
+\titleformat{\subsection}
+  {\normalsize\bfseries\color{accent!80!black}}
+  {\thesubsection.}{0.5em}{}
+\titlespacing{\subsection}{0pt}{1em plus 0.6em minus 0.3em}{0.4em}
+
+% --------------------------- Cabecera / pie de página ---------------------------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead[L]{\small\color{greytext}Ejercicio 1 --- NoThrust Inc.}
+\fancyhead[R]{\small\color{greytext}Programación y Prototipado}
+\fancyfoot[C]{\small\color{greytext}\thepage\ / \pageref{LastPage}}
+\usepackage{lastpage}
+
+% --------------------------- Figuras, tablas, enlaces ---------------------------
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{float}
+\usepackage[hidelinks,colorlinks=true,linkcolor=accent,citecolor=accent,urlcolor=accent]{hyperref}
+\usepackage{enumitem}
+\setlist{itemsep=0.15em, topsep=0.3em}
+
+% --------------------------- Datos del documento ---------------------------
+\newcommand{\miTitulo}{Integrated software solution for NoThrust Inc.}
+\newcommand{\miSubtitulo}{Fase seleccionada: \emph{[Analisys]}}
+\newcommand{\miAutor}{Nicolás Rey Alonso}
+\newcommand{\miAsignatura}{Programación y Prototipado --- SIANI}
+
+\begin{document}
+
+% =====================================================================
+% BLOQUE DE TÍTULO (compacto, sin página aparte, para ahorrar espacio)
+% =====================================================================
+\begin{center}
+  {\LARGE\bfseries\color{accent} \miTitulo\par}
+  \vspace{0.3em}
+  {\large\color{greytext} \miSubtitulo\par}
+  \vspace{0.6em}
+  {\normalsize \miAutor \;\textbar\; \miAsignatura \;\textbar\; \today\par}
+\end{center}
+
+\vspace{0.3em}
+{\color{accent}\hrule height 1pt}
+\vspace{1em}
+
+
+\section{Context}
+
+NoThrust Inc. is a business dedicated to 
+
+
+% =====================================================================
+% 2. FASE SELECCIONADA Y JUSTIFICACIÓN
+% =====================================================================
+\section{Fase de Ingeniería del Software seleccionada}
+
+% EDITA: indica aquí qué fase eliges (análisis, modelado o diseño) y
+% justifica brevemente la elección en el contexto de NoThrust Inc.
+% Ejemplo de frase inicial:
+Para este ejercicio se ha seleccionado la fase de \textbf{[análisis /
+modelado / diseño]}, dado que \ldots
+
+% =====================================================================
+% 3. DESARROLLO
+% =====================================================================
+\section{Desarrollo}
+
+% ---------------------------------------------------------------
+% Si tu fase es ANÁLISIS, esta subsección te sirve de guía:
+% ---------------------------------------------------------------
+\subsection{Requisitos funcionales y no funcionales}
+
+\begin{itemize}
+  \item RF-01: El sistema debe permitir registrar la solicitud de estudio de un cliente.
+\end{itemize}
+
+\subsection{Actores y casos de uso}
+
+La Figura~\ref{fig:casos_uso} muestra los actores principales identificados
+(Usuario y Administrador) y sus interacciones con el sistema.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.72\textwidth]{casos_de_uso.png}
+  \caption{Diagrama de casos de uso preliminar del sistema de NoThrust Inc.}
+  \label{fig:casos_uso}
+\end{figure}
+
+% =====================================================================
+% 4. CONCLUSIONES
+% =====================================================================
+\section{Conclusiones}
+
+% EDITA: 3-5 líneas resumiendo el aporte del análisis/modelado/diseño
+% presentado y cómo contribuye a la solución integrada que busca NoThrust Inc.
+
+\end{document}
