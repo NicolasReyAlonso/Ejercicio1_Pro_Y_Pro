@@ -1,0 +1,69 @@
+@startuml basic_proyect_flow
+skinparam shadowing false
+skinparam activity {
+  BackgroundColor #E8F0FA
+  BorderColor #0B5394
+  DiamondBackgroundColor #FFFFFF
+  DiamondBorderColor #0B5394
+  ArrowColor #333333
+}
+skinparam swimlane {
+  BorderColor #0B5394
+  TitleFontColor #0B5394
+  TitleFontStyle bold
+}
+
+|Client|
+start
+:Request study;
+
+|Administrative Officer|
+:Register study request;
+:Prepare study brief;
+
+|Project Manager|
+:Prepare budget
+(estimate missions,
+devices and schedule);
+
+|Client|
+:Review budget;
+if (Budget approved?) then (no)
+  stop
+endif
+
+|Project Manager|
+:Start study;
+
+repeat
+  |Project Manager|
+  :Plan mission;
+  |Field Operator|
+  :Configure devices
+  (sampling, battery);
+  :Deploy devices;
+  :Track devices and
+  inspect partial data;
+  :Recover devices and
+  download data;
+  |Project Manager|
+repeat while (More missions pending?) is (yes) not (no)
+
+|Data Analyst|
+:Process collected data;
+:Prepare final report;
+
+|Administrative Officer|
+:Issue bill;
+
+|Client|
+:Receive bill;
+if (Installment plan?) then (yes)
+  :Request installment plan;
+  :Pay first installment;
+else (no)
+  :Pay bill;
+endif
+:Receive report;
+stop
+@enduml
