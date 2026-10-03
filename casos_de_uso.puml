@@ -1,14 +1,106 @@
-@startuml
+@startuml casos_de_uso
 left to right direction
-actor Client
-actor Administrator
-actor Engenieer
-
-rectangle Sistema {
-  Client --> (Request proyect)
-  Client --> (Consultar informes)
-  Administrator --> (Gestionar usuarios)
-  Administrator --> (Log in)
+skinparam shadowing false
+skinparam packageStyle rectangle
+skinparam actorStyle awesome
+skinparam usecase {
+  BackgroundColor #E8F0FA
+  BorderColor #0B5394
+  ArrowColor #333333
 }
-Administrator --> (Start Business Process)
+skinparam rectangle {
+  BorderColor #0B5394
+  FontColor #0B5394
+}
+
+actor "Client" as client
+actor "Administrative\nOfficer" as admin
+actor "Project\nManager" as pm
+actor "Field\nOperator" as op
+actor "Data\nAnalyst" as analyst
+actor "Maintenance\nTechnician" as tech
+actor "Autonomous\nDevice" as device <<system>>
+
+rectangle "NoThrust Integrated Management System" {
+
+  package "Study Management" {
+    usecase "Request study" as UC1
+    usecase "Prepare study brief" as UC20
+    usecase "Prepare budget" as UC2
+    usecase "Estimate missions,\ndevices and schedule" as UC2a
+    usecase "Approve budget" as UC3
+    usecase "Start study" as UC4
+    usecase "Issue bill" as UC5
+    usecase "Receive bill" as UC14
+    usecase "Pay bill" as UC17
+    usecase "Request\ninstallment plan" as UC18
+    usecase "Receive report" as UC19
+    note "<b>Precondition:</b>\nbill paid (or first\ninstallment, if agreed)" as N1
+  }
+
+  package "Mission Execution" {
+    usecase "Plan mission" as UC6
+    usecase "Configure devices\n(sampling, battery)" as UC7
+    usecase "Deploy devices" as UC8
+    usecase "Track devices\nin real time" as UC9
+    usecase "Inspect partial data" as UC10
+    usecase "Recover devices and\ndownload data" as UC11
+  }
+
+  package "Data & Reporting" {
+    usecase "Process collected data" as UC12
+    usecase "Prepare final report" as UC13
+  }
+
+  package "Fleet Maintenance" {
+    usecase "Calibrate sensors" as UC15
+    usecase "Check battery status" as UC16
+  }
+}
+
+' --- Client (left) ---
+client --> UC1
+client --> UC3
+client --> UC14
+client --> UC17
+client --> UC19
+UC17 <.. UC18 : <<extend>>
+UC19 .. N1
+
+' --- Administrative Officer (left) ---
+admin --> UC1
+admin --> UC20
+admin --> UC5
+
+' --- Project Manager (left) ---
+pm --> UC2
+pm --> UC4
+pm --> UC6
+UC2 ..> UC2a : <<include>>
+
+' --- Field Operator (left) ---
+op --> UC7
+op --> UC8
+op --> UC9
+op --> UC10
+op --> UC11
+UC7 ..> UC16 : <<include>>
+
+' --- Data Analyst (right) ---
+UC12 <-- analyst
+UC13 <-- analyst
+UC13 ..> UC12 : <<include>>
+
+' --- Maintenance Technician (right) ---
+UC15 <-- tech
+UC16 <-- tech
+
+' --- Autonomous Device (secondary actor, right) ---
+UC9 --> device
+UC10 --> device
+UC11 --> device
+
+' --- Layout hints (invisible) ---
+UC4 -[hidden]-> UC12
+UC14 -[hidden]-> UC13
 @enduml
