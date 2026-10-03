@@ -5,7 +5,7 @@
 \documentclass[11pt,a4paper]{article}
 
 % --------------------------- Idioma / codificación ---------------------------
-\usepackage[spanish,es-tabla]{babel}  % Cambia a [english] si escribes en inglés
+\usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
@@ -17,7 +17,7 @@
 
 % --------------------------- Color corporativo ---------------------------
 \usepackage{xcolor}
-\definecolor{accent}{HTML}{0B5394}   % azul profesional (cámbialo si quieres otro)
+\definecolor{accent}{HTML}{0B5394}  
 \definecolor{accentlight}{HTML}{E8F0FA}
 \definecolor{greytext}{HTML}{555555}
 
@@ -54,7 +54,7 @@
 
 % --------------------------- Datos del documento ---------------------------
 \newcommand{\miTitulo}{Integrated software solution for NoThrust Inc.}
-\newcommand{\miSubtitulo}{Fase seleccionada: \emph{[Analisys]}}
+\newcommand{\miSubtitulo}{Selected phase: \emph{[Analysis]}}
 \newcommand{\miAutor}{Nicolás Rey Alonso}
 \newcommand{\miAsignatura}{Programación y Prototipado --- SIANI}
 
@@ -78,50 +78,55 @@
 
 \section{Context}
 
-NoThrust Inc. is a business dedicated to 
+NoThrust Inc. is a company specializing in the investigation and reporting of
+oceanic parameters, such as ocean currents and water temperature. The company
+seeks to modernize its technological infrastructure by adopting a centralized
+software platform capable of managing its full range of business processes.
+This document addresses the problem at a preliminary level, focusing
+specifically on the analysis phase of the software engineering process.
 
 
 % =====================================================================
 % 2. FASE SELECCIONADA Y JUSTIFICACIÓN
 % =====================================================================
-\section{Fase de Ingeniería del Software seleccionada}
+\section{Selected Software Engineering Phase}
 
 % EDITA: indica aquí qué fase eliges (análisis, modelado o diseño) y
 % justifica brevemente la elección en el contexto de NoThrust Inc.
 % Ejemplo de frase inicial:
-Para este ejercicio se ha seleccionado la fase de \textbf{[análisis /
-modelado / diseño]}, dado que \ldots
+For this exercise, the \textbf{[analysis / modeling / design]} phase has
+been selected, given that \ldots
 
 % =====================================================================
 % 3. DESARROLLO
 % =====================================================================
-\section{Desarrollo}
+\section{Development}
 
 % ---------------------------------------------------------------
 % Si tu fase es ANÁLISIS, esta subsección te sirve de guía:
 % ---------------------------------------------------------------
-\subsection{Requisitos funcionales y no funcionales}
+\subsection{Functional and Non-Functional Requirements}
 
 \begin{itemize}
-  \item RF-01: El sistema debe permitir registrar la solicitud de estudio de un cliente.
+  \item FR-01: The system shall allow registering a client's study request.
 \end{itemize}
 
-\subsection{Actores y casos de uso}
+\subsection{Actors and Use Cases}
 
-La Figura~\ref{fig:casos_uso} muestra los actores principales identificados
-(Usuario y Administrador) y sus interacciones con el sistema.
+Figure~\ref{fig:casos_uso} shows the main actors identified (User and
+Administrator) and their interactions with the system.
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.72\textwidth]{casos_de_uso.png}
-  \caption{Diagrama de casos de uso preliminar del sistema de NoThrust Inc.}
+  \caption{Preliminary use case diagram of the NoThrust Inc. system.}
   \label{fig:casos_uso}
 \end{figure}
 
 % =====================================================================
 % 4. CONCLUSIONES
 % =====================================================================
-\section{Conclusiones}
+\section{Conclusions}
 
 % EDITA: 3-5 líneas resumiendo el aporte del análisis/modelado/diseño
 % presentado y cómo contribuye a la solución integrada que busca NoThrust Inc.

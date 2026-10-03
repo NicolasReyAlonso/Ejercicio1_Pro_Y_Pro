@@ -2,7 +2,7 @@
 left to right direction
 actor Client
 actor Administrator
-actor 
+actor Engenieer
 
 rectangle Sistema {
   Client --> (Request proyect)
@@ -10,5 +10,5 @@ rectangle Sistema {
   Administrator --> (Gestionar usuarios)
   Administrator --> (Log in)
 }
-Administrador --> (Start Business Process)
+Administrator --> (Start Business Process)
 @enduml
